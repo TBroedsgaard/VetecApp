@@ -374,14 +374,16 @@ namespace WpfApplication1
                 
             }
             
-            if (gtallio > 500)
+            if (gtallio > 500 || gtallio < 10)
             {
                 warningImg.Visibility = Visibility.Visible;
-                warningImg.ToolTip = "Diameteren kan ikke være mere end 500mm!";
+                warningImg.ToolTip = "Min ø 10  max 100 ";
+                btnCheckForm.IsEnabled = false;
             }
             else
             {
                 warningImg.Visibility = Visibility.Hidden;
+                btnCheckForm.IsEnabled = true;
             }
         }
 
