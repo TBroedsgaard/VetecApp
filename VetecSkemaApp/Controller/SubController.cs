@@ -60,7 +60,7 @@ namespace Controller
         { 
             Order order = (Order)iorder;
 
-            string xml = JsonConvert.SerializeObject(order);
+            string xml = JsonConvert.SerializeObject(order, Formatting.Indented);
 
             return xml;
 
