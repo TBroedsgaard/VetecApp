@@ -371,6 +371,7 @@ namespace WpfApplication1
             {
                 warningImg.Visibility = Visibility.Visible;
                 warningImg.ToolTip = "Du må kun bruge tal og komma/decimal!";
+                
             }
             
             if (gtallio > 500)
@@ -470,6 +471,26 @@ namespace WpfApplication1
             acw.ShowDialog();
         }
 
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            chckboxHose.IsEnabled = false;   
+            chckbox1000.IsEnabled = false;   
+            chckbox2000.IsEnabled = false;
+            chckbox700.IsEnabled = false;
+            chckbox350.IsEnabled = false;
+            chckboxHose.IsEnabled = false;                     
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            chckboxHose.IsEnabled = true;
+            chckbox1000.IsEnabled = true;
+            chckbox2000.IsEnabled = true;
+            chckbox700.IsEnabled =  true;
+            chckbox350.IsEnabled =  true;
+            chckboxHose.IsEnabled = true;   
+        }                                    
+                                             
         //private void addFormToList(object sender, RoutedEventArgs e)
         //{
         //    IForm form = CreateForm();
