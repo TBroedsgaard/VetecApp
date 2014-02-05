@@ -53,7 +53,7 @@ namespace WpfApplication1
             return customerDataList;
         }
 
-        private IForm CreateForm()
+        private IForm createForm()
         {
             
             int DimA = int.Parse(txtboxA.Text);
@@ -389,15 +389,18 @@ namespace WpfApplication1
 
         private void onClickSaveForm(object sender, RoutedEventArgs e)
         {
-            //IForm form = CreateForm();
+            IOrder order = controller.CreateOrder();
+            order.Form = createForm();
+            order.OrderDate = DateTime.Now;
 
-            //string serializedString = SubController.SerializeToString(form);
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Form file | *.form";
+            sfd.DefaultExt = "form";
+            sfd.ShowDialog();
 
-            //SaveFileDialog sfd = new SaveFileDialog();
-            //sfd.Filter = "Form file | *.form";
-            //sfd.DefaultExt = "form";
-            //sfd.ShowDialog();
+            string filename = sfd.FileName;
 
+            controller.SaveOrder(filename, order);
             //StreamWriter sw = new StreamWriter(sfd.FileName);
             //sw.WriteLine(serializedString);
             //sw.Close();
@@ -406,6 +409,15 @@ namespace WpfApplication1
 
         private void onClickLoadForm(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Form file | *.form";
+            ofd.ShowDialog();
+
+            string filename = ofd.FileName;
+
+            IOrder order = controller.LoadOrder(filename);
+
+            loadFormToUI(order.Form);
             //try
             //{
             //    OpenFileDialog ofd = new OpenFileDialog();
@@ -424,7 +436,7 @@ namespace WpfApplication1
             //}
         }
 
-        private void LoadFormToUI(IForm form)
+        private void loadFormToUI(IForm form)
         {
             txtboxA.Text = form.DimA.ToString();
             txtboxB.Text = form.DimB.ToString();
