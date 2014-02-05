@@ -389,24 +389,129 @@ namespace WpfApplication1
 
         private void onClickSaveForm(object sender, RoutedEventArgs e)
         {
-            IOrder order = controller.CreateOrder();
-            order.Form = createForm();
-            order.OrderDate = DateTime.Now;
+            if (ValidateFormNotNull())
+            {
 
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Form file | *.form";
-            sfd.DefaultExt = "form";
-            sfd.ShowDialog();
 
-            string filename = sfd.FileName;
+                IOrder order = controller.CreateOrder();
+                order.Form = createForm();
+                order.OrderDate = DateTime.Now;
 
-            controller.SaveOrder(filename, order);
-            //StreamWriter sw = new StreamWriter(sfd.FileName);
-            //sw.WriteLine(serializedString);
-            //sw.Close();
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Form file | *.form";
+                sfd.DefaultExt = "form";
+                sfd.ShowDialog();
+
+                string filename = sfd.FileName;
+
+                controller.SaveOrder(filename, order);
+                //StreamWriter sw = new StreamWriter(sfd.FileName);
+                //sw.WriteLine(serializedString);
+                //sw.Close();
+            }
+            else MessageBox.Show("please enter all required fields");
 
         }
 
+        
+        private bool ValidateFormNotNull()
+        {
+            
+            if (validateoutputoptions() && validateloadpincapacity() && validateWorkingEnvironment() && validateBridgeResistance() 
+                && validateSpecification() && validateDimensions() && validateContact())
+            {
+                return true;
+            }
+
+            return false;  
+        }
+        private bool validateoutputoptions() 
+        {
+         if (chckboxMvv.IsChecked != null || chckbox420ma.IsChecked !=null && (chckbox3wire.IsChecked != null || chckbox2wire.IsChecked !=null))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        private bool validateloadpincapacity()
+        {
+            if (txtboxLoadCap.Text != "")
+            { return true; }
+            return false;
+        }
+        private bool validateWorkingEnvironment()
+        {   
+            if (chckboxExp !=null || chckboxWet != null || chckboxDry !=null ||chckboxChem != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        private bool validateBridge() 
+        {
+            if (chckboxSingle !=null || chckboxDouble != null)
+	{
+		 return true;
+	}
+            else
+	{
+                return false;
+	}
+
+
+        }
+        private bool validateBridgeResistance()
+            {
+                if (ChckboxStandard.IsChecked != null || chckbox350.IsChecked != null || chckbox700.IsChecked != null || chckbox1000 != null                
+                    || chckbox2000.IsChecked != null)
+                {
+                    return true;
+                }
+                   return false;
+                }
+        private bool validateSpecification()
+        {
+            if (chckboxRadial.IsChecked != null || chckboxAxial.IsChecked != null && chckboxKeep.IsChecked != null
+                || chckboxOther.IsChecked != null && chckboxGland.IsChecked != null || chckboxConnector.IsChecked!= null && chckboxCable != null)
+            {
+                return true;
+            }
+           
+	       
+            return false;
+	       
+            
+        }
+        private bool validateDimensions()
+        {
+            if (txtboxF_.Text != "" && txtboxA.Text != "" && txtboxB.Text != "" && txtboxC.Text != "" &&
+            txtboxD.Text != "" && txtboxE.Text != "" &&  txtboxF.Text != "" && txtboxG.Text != "" && txtboxH.Text != "")
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool validateContact()
+        {
+            if (ContactNametxtbox.Text != "" && CompanyNametxtbox.Text != null && EmailTextbox.Text != null && TelNoTextbox.Text!= "")
+            {
+                return true;
+            }
+
+            return false;
+        }
+        private bool validateAngle()
+        {
+            if (txtboxFDegree.Text != "" && txtboxFMDegree1.Text != "" && txtboxFMDegree2.Text != "" && txtboxFPDegree1.Text != "" &&txtboxFPDegree2.Text != "")
+            {
+                return true;
+            }
+            return false;
+        }
+    
+       
         private void onClickLoadForm(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -478,6 +583,8 @@ namespace WpfApplication1
             chckboxConnector.IsChecked = form.SPConnector;
             chckboxGrease.IsChecked = form.SPGreaseway;
         }
+
+
 
        
 

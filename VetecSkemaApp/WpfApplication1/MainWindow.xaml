@@ -26,7 +26,7 @@
             <CheckBox x:Name="chckbox350" Content="350 ohm" HorizontalAlignment="Left" Margin="765.026,60.645,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
             <CheckBox x:Name="chckboxHose" Content="Hydraulic Hose" HorizontalAlignment="Left" Margin="866.459,104.227,-5,0" VerticalAlignment="Top" Height="22.885" Width="134.466" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
             <GroupBox Header="Bridge Resistance" HorizontalAlignment="Left" Margin="759.367,20.473,-8.985,0" VerticalAlignment="Top" Height="166.921" Width="245.543" FontSize="16">
-                <CheckBox Content="Standard" HorizontalAlignment="Left" Height="138.641" VerticalAlignment="Top" Width="233.543" Margin="104.5,0,-104.5,0" FontWeight="Bold" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                <CheckBox x:Name="ChckboxStandard" Content="Standard" HorizontalAlignment="Left" Height="138.641" VerticalAlignment="Top" Width="233.543" Margin="104.5,0,-104.5,0" FontWeight="Bold" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
             </GroupBox>
             <GroupBox Header="Bridge" HorizontalAlignment="Left" Margin="572.303,20.987,0,0" VerticalAlignment="Top" Height="89.884" Width="166.064" FontSize="16"/>
             <GroupBox Header="Output Options" HorizontalAlignment="Left" Margin="29.916,99.652,0,0" VerticalAlignment="Top" Height="85.742" Width="303.047" FontSize="16"/>
