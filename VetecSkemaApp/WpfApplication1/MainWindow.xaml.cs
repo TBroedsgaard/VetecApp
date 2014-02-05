@@ -371,16 +371,19 @@ namespace WpfApplication1
             {
                 warningImg.Visibility = Visibility.Visible;
                 warningImg.ToolTip = "Du må kun bruge tal og komma/decimal!";
+                
             }
             
-            if (gtallio > 500)
+            if (gtallio > 500 || gtallio < 10)
             {
                 warningImg.Visibility = Visibility.Visible;
-                warningImg.ToolTip = "Diameteren kan ikke være mere end 500mm!";
+                warningImg.ToolTip = "Min ø 10  max 100 ";
+                btnCheckForm.IsEnabled = false;
             }
             else
             {
                 warningImg.Visibility = Visibility.Hidden;
+                btnCheckForm.IsEnabled = true;
             }
         }
 
@@ -476,12 +479,28 @@ namespace WpfApplication1
             chckboxGrease.IsChecked = form.SPGreaseway;
         }
 
-        private void onClickOpenCustomerWindow(object sender, RoutedEventArgs e)
+       
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            AddCustomerWindow acw = new AddCustomerWindow();
-            acw.ShowDialog();
+            chckboxHose.IsEnabled = false;   
+            chckbox1000.IsEnabled = false;   
+            chckbox2000.IsEnabled = false;
+            chckbox700.IsEnabled = false;
+            chckbox350.IsEnabled = false;
+            chckboxHose.IsEnabled = false;                     
         }
 
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            chckboxHose.IsEnabled = true;
+            chckbox1000.IsEnabled = true;
+            chckbox2000.IsEnabled = true;
+            chckbox700.IsEnabled =  true;
+            chckbox350.IsEnabled =  true;
+            chckboxHose.IsEnabled = true;   
+        }                                    
+                                             
         //private void addFormToList(object sender, RoutedEventArgs e)
         //{
         //    IForm form = CreateForm();
