@@ -479,11 +479,7 @@ namespace WpfApplication1
             chckboxGrease.IsChecked = form.SPGreaseway;
         }
 
-        private void onClickOpenCustomerWindow(object sender, RoutedEventArgs e)
-        {
-            AddCustomerWindow acw = new AddCustomerWindow();
-            acw.ShowDialog();
-        }
+       
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
