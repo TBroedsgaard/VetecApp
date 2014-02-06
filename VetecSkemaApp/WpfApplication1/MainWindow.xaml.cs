@@ -103,8 +103,9 @@ namespace WpfApplication1
 
         private IContactPerson CreateContactPerson()
         {
-            icp = controller.CreateContactPerson(ContactNametxtbox.Text,  ContactNametxtbox.Text,
-                                                       CompanyNametxtbox.Text, TelNoTextbox.Text);
+            icp = controller.CreateContactPerson(ContactNametxtbox.Text, TelNoTextbox.Text, EmailTextbox.Text,                                         CompanyNametxtbox.Text);
+                                                               
+
             return icp;
         }
 
@@ -404,6 +405,7 @@ namespace WpfApplication1
                 IOrder order = controller.CreateOrder();
                 order.Form = createForm();
                 order.OrderDate = DateTime.Now;
+                order.ConPerson = CreateContactPerson();
                 
                 
                 SaveFileDialog sfd = new SaveFileDialog();

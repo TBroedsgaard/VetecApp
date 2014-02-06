@@ -14,12 +14,15 @@ namespace Model
         public IForm Form { get; set; }
         public ICustomer Customer { get; set; }
         public DateTime OrderDate { get; set; }
+        public IContactPerson ConPerson { get; set; }
+
 
         [JsonConstructor]
-        public Order(Form form, Customer customer)
+        public Order(Form form, Customer customer, ContactPerson contactperson)
         {
             Form = form;
             Customer = customer;
+            Conperson = contactperson;
 
         }
 

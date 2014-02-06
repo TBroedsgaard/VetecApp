@@ -13,7 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Controller
 {
-    public class SubController
+    public class  SubController
     {
         // static is ugly??
 
@@ -137,18 +137,19 @@ namespace Controller
             return iForm;
         }
 
-        //public static IContactPerson CreateContact(string name, string phone, string email, string available)
-        //{
-        //    ContactPerson cp = new ContactPerson();
+        public  IContactPerson CreateContactPerson(string name, string phone, string email, string companyname)
+        {
+            ContactPerson cp = new ContactPerson();
 
-        //    cp.Name = name;
-        //    cp.Phone = int.Parse(phone);
-        //    cp.Email = email;
+            cp.Name = name;
+            cp.Phone = phone;
+            cp.Email = email;
+            cp.CompanyName = companyname;
 
-        //    IContactPerson iCP = cp as IContactPerson;
-        //    return iCP;
+            IContactPerson iCP = cp as IContactPerson;
+            return iCP;
 
-        //}
+        }
 
         //public static void AddFormToList(IForm form)
         //{
