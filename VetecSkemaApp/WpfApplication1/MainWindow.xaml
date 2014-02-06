@@ -76,8 +76,9 @@
             <Image x:Name="warningImg" HorizontalAlignment="Left" Height="26.85" Margin="530.173,4.807,0,0" VerticalAlignment="Top" Width="28.377" Source="Resources/1391007818_Warning.png" Visibility="Hidden" Grid.Row="1"/>
             <Label Content="Alle mål er i millimeter!" HorizontalAlignment="Left" Margin="421.371,553.108,0,0" VerticalAlignment="Top" Width="173.366" FontWeight="Bold" FontSize="14"/>
             <Button x:Name="btnCheckForm_Copy" Content="Load form" HorizontalAlignment="Left" Margin="715.313,34.108,0,0" VerticalAlignment="Top" Width="85" Click="onClickLoadForm" Height="33.8" Grid.Row="1"/>
-            <Image Margin="8.156,214.312,616.811,253.081" Source="Image1.png" Stretch="Fill"/>
-
+            <StackPanel>
+            <Image Margin="8.156,214.312,616.811,253.081" Source="Image1.png"/>
+            </StackPanel>
             <GroupBox x:Name="Angle" Header="Angle" HorizontalAlignment="Left" Margin="679.772,199.973,-5,0" VerticalAlignment="Top" Height="359.135" Width="321.153" FontSize="16" RenderTransformOrigin="0.488,0.541">
                 <Image Margin="101.492,0,20.508,109" Source="Image2.png" Stretch="Fill"/>
             </GroupBox>

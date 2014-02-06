@@ -11,6 +11,6 @@ namespace Interfaces
         IForm Form { get; set; }
         ICustomer Customer { get; set; }
         DateTime OrderDate { get; set; }
-
+        IContactPerson iContacPerson { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace WpfApplication1
     {
         private SubController controller;
         private IForm iFormz;
+        private IContactPerson icp;
 
         public MainWindow()
         {
@@ -55,7 +56,7 @@ namespace WpfApplication1
 
         private IForm createForm()
         {
-            
+           
             int DimA = int.Parse(txtboxA.Text);
             int DimB = int.Parse(txtboxB.Text);
             int DimC = int.Parse(txtboxA.Text);
@@ -98,6 +99,13 @@ namespace WpfApplication1
             iFormz = controller.CreateForm(DimA, DimB, DimC, DimD, DimE, DimF, DimFPlus, DimG, DimTol, LPCapacity,
                         OO2Wire, OO3Wire, OO420mA, OOBDouble, OOBR1000, OOBR2000, OOBR700, OOBSingle, OOHHose, OOMvV, SPAxial, SPRadial, SPConnector,SPGland,SPGreaseway,SPKeeplateEnd,SPOtherEnd, DimH, OOWet, OODry, OOExp, OOChem, SPCLength);
             return iFormz;
+        }
+
+        private IContactPerson CreateContactPerson()
+        {
+            icp = controller.CreateContactPerson(ContactNametxtbox.Text,  ContactNametxtbox.Text,
+                                                       CompanyNametxtbox.Text, TelNoTextbox.Text);
+            return icp;
         }
 
         private void checkboxChecked(object sender, RoutedEventArgs e)
@@ -396,7 +404,8 @@ namespace WpfApplication1
                 IOrder order = controller.CreateOrder();
                 order.Form = createForm();
                 order.OrderDate = DateTime.Now;
-
+                
+                
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "Form file | *.form";
                 sfd.DefaultExt = "form";
