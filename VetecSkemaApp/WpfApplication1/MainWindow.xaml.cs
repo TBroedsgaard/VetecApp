@@ -34,17 +34,6 @@ namespace WpfApplication1
             
             InitializeComponent();
 
-            var myLine = new Line();
-            myLine.Stroke = System.Windows.Media.Brushes.Black;
-            myLine.StrokeThickness = 2;
-            myLine.X1 = 10;
-            myLine.Y1 = 10;
-            myLine.X2 = 200;
-            myLine.Y2 = 10;
-
-
-            canvas.Children.Add(myLine);
-
             drawing = new WeightDrawing(canvas);
 
         }

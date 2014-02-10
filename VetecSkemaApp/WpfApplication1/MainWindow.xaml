@@ -9,7 +9,14 @@
                 <RowDefinition Height="37*"/>
             </Grid.RowDefinitions>
 
-            <Canvas x:Name="canvas" Margin="13.621,196.931,616.811,245.706"/>
+            <TabControl Margin="13.621,196.931,616.811,245.706">
+                <TabItem Header="Illustration">
+                    
+                </TabItem>
+                    <TabItem Header="Skitse" >
+                    <Canvas x:Name="canvas" />
+                </TabItem>
+            </TabControl>
 
 
             <TextBox x:Name="txtboxLoadCap" HorizontalAlignment="Left" Height="20.822" Margin="195.582,59.301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107.275" FontSize="14"/>

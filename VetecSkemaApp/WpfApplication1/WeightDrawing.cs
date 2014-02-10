@@ -11,18 +11,22 @@ namespace WpfApplication1
     class WeightDrawing
     {
         Canvas canvas;
+        int canvasSizeX;
+        int canvasSizeY;
 
         public WeightDrawing(Canvas canvas)
         {
             this.canvas = canvas;
+            canvasSizeX = 300;
+            canvasSizeY = 200;
         }
 
         public void DrawWeight(uint A, uint B, uint C, uint D, uint E, uint F, uint G, uint H)
         {
             canvas.Children.Clear();
 
-            double scaleFactorX = (double)400 / ((double)A + (double)B + (double)C + (double)D + (double)E + (double)10);
-            double scaleFactorY = (double)300 / (Math.Max((double)G, (double)F));
+            double scaleFactorX = (double)canvasSizeX / ((double)A + (double)B + (double)C + (double)D + (double)E + (double)10);
+            double scaleFactorY = (double)canvasSizeY / (Math.Max((double)G, (double)F));
             drawWeight(A, B, C, D, E, F, G, H, scaleFactorX, scaleFactorY);
             scaleCanvas(scaleFactorX, scaleFactorY);
         }
