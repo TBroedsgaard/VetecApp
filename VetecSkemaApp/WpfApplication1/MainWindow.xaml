@@ -9,12 +9,12 @@
                 <RowDefinition Height="37*"/>
             </Grid.RowDefinitions>
 
-            <TabControl Margin="13.621,196.931,616.811,245.706">
+            <TabControl Margin="13.621,196.931,590,245.706">
                 <TabItem Header="Illustration">
-                    
+                    <Image Source="Image1.png" Stretch="Fill"/>
                 </TabItem>
-                    <TabItem Header="Skitse" >
-                    <Canvas x:Name="canvas" />
+                <TabItem Header="Skitse" >
+                    <Canvas x:Name="canvas" HorizontalAlignment="Center" VerticalAlignment="Center" Height="225" Width="350"/>
                 </TabItem>
             </TabControl>
 

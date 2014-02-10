@@ -17,8 +17,8 @@ namespace WpfApplication1
         public WeightDrawing(Canvas canvas)
         {
             this.canvas = canvas;
-            canvasSizeX = 300;
-            canvasSizeY = 200;
+            canvasSizeX = 350;
+            canvasSizeY = 225;
         }
 
         public void DrawWeight(uint A, uint B, uint C, uint D, uint E, uint F, uint G, uint H)
