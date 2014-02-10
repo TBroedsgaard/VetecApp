@@ -14,7 +14,7 @@ namespace Model
         public IForm Form { get; set; }
         public ICustomer Customer { get; set; }
         public DateTime OrderDate { get; set; }
-        public IContactPerson ConPerson { get; set; }
+        public IContactPerson ContactPerson { get; set; }
 
 
         [JsonConstructor]
@@ -22,7 +22,7 @@ namespace Model
         {
             Form = form;
             Customer = customer;
-            Conperson = contactperson;
+            ContactPerson = contactperson;
 
         }
 

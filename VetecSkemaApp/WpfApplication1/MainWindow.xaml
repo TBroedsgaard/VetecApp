@@ -13,28 +13,34 @@
             <TextBox x:Name="txtboxLoadCap" HorizontalAlignment="Left" Height="20.822" Margin="195.582,59.301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107.275" FontSize="14"/>
             <Label Content="Specification Requirement Document" HorizontalAlignment="Left" Margin="29.916,10,0,0" VerticalAlignment="Top" Height="38.438" Width="429.449" FontSize="22" FontWeight="Bold"/>
             <Label Content="Load Pin Capacity:" HorizontalAlignment="Left" Margin="29.916,52.964,0,0" VerticalAlignment="Top" FontSize="16" Width="145.265" Height="30.566"/>
-            <CheckBox x:Name="chckboxMvv" Content="mv/V" HorizontalAlignment="Left" Margin="47.348,129.531,0,0" VerticalAlignment="Top" Height="22.885" Width="107.275" FontSize="16" Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
+              
+            <CheckBox x:Name="chckboxMvv" Content="mv/V" HorizontalAlignment="Left" Margin="47.348,129.531,0,0" VerticalAlignment="Top" Height="22.885" Width="107.275" FontSize="16" Checked="outputCheckboxChecked" Unchecked="outputCheckboxUnchecked"/>
+             <CheckBox x:Name="chckbox420ma" Content="4 - 20mA" HorizontalAlignment="Left" Margin="159.15,129.531,0,0" VerticalAlignment="Top" Height="22.885" Width="86.906" FontSize="16"  Checked="outputCheckboxChecked" Unchecked="outputCheckboxUnchecked"/>
+            <CheckBox x:Name="chckbox3wire" Content="3 wire" HorizontalAlignment="Left" Margin="246.056,144.468,0,0" VerticalAlignment="Top" Height="22.885" Width="86.907" FontSize="16"  Checked="outputCheckboxChecked" Unchecked="outputCheckboxUnchecked"/>
+            <CheckBox x:Name="chckbox2wire" Content="2 wire" HorizontalAlignment="Left" Margin="246.056,117.056,0,0" VerticalAlignment="Top" Height="22.885" Width="86.907" FontSize="16"  Checked="outputCheckboxChecked" Unchecked="outputCheckboxUnchecked"/>
 
-            <CheckBox x:Name="chckbox420ma" Content="4 - 20mA" HorizontalAlignment="Left" Margin="159.15,129.531,0,0" VerticalAlignment="Top" Height="22.885" Width="86.906" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckbox3wire" Content="3 wire" HorizontalAlignment="Left" Margin="246.056,144.468,0,0" VerticalAlignment="Top" Height="22.885" Width="86.907" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckbox2wire" Content="2 wire" HorizontalAlignment="Left" Margin="246.056,117.056,0,0" VerticalAlignment="Top" Height="22.885" Width="86.907" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckboxSingle" Content="Single" HorizontalAlignment="Left" Margin="622.597,51.227,0,0" VerticalAlignment="Top" Height="22.886" Width="86.907" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckboxDouble" Content="Double" HorizontalAlignment="Left" Margin="622.016,75.284,0,0" VerticalAlignment="Top" Height="22.885" Width="86.907" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckbox2000" Content="2000 ohm" HorizontalAlignment="Left" Margin="765.026,143.86,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckbox1000" Content="1000 ohm" HorizontalAlignment="Left" Margin="765.026,115.398,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckbox700" Content="700 ohm" HorizontalAlignment="Left" Margin="765.026,87.986,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckbox350" Content="350 ohm" HorizontalAlignment="Left" Margin="765.026,60.645,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
+            <CheckBox x:Name="chckboxSingle" Content="Single" HorizontalAlignment="Left" Margin="622.597,51.227,0,0" VerticalAlignment="Top" Height="22.886" Width="86.907" FontSize="16"  Checked="bridgecheckboxChecked" Unchecked="bridgeCheckboxUnchecked"/>
+            <CheckBox x:Name="chckboxDouble" Content="Double" HorizontalAlignment="Left" Margin="622.016,75.284,0,0" VerticalAlignment="Top" Height="22.885" Width="86.907" FontSize="16"  Checked="bridgecheckboxChecked" Unchecked="bridgeCheckboxUnchecked"/>
+
+            <CheckBox x:Name="chckbox2000" Content="2000 ohm" HorizontalAlignment="Left" Margin="765.026,143.86,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="bridgeResistanceCheckboxChecked" Unchecked="checkboxUnchecked"/>
+            <CheckBox x:Name="chckbox1000" Content="1000 ohm" HorizontalAlignment="Left" Margin="765.026,115.398,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="bridgeResistanceCheckboxChecked" Unchecked="checkboxUnchecked"/>
+            <CheckBox x:Name="chckbox700" Content="700 ohm" HorizontalAlignment="Left" Margin="765.026,87.986,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="bridgeResistanceCheckboxChecked" Unchecked="checkboxUnchecked"/>
+            <CheckBox x:Name="chckbox350" Content="350 ohm" HorizontalAlignment="Left" Margin="765.026,60.645,0,0" VerticalAlignment="Top" Height="22.885" Width="96.433" FontSize="16"  Checked="bridgeResistanceCheckboxChecked" Unchecked="checkboxUnchecked"/>
             <CheckBox x:Name="chckboxHose" Content="Hydraulic Hose" HorizontalAlignment="Left" Margin="866.459,104.227,-5,0" VerticalAlignment="Top" Height="22.885" Width="134.466" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
+           
             <GroupBox Header="Bridge Resistance" HorizontalAlignment="Left" Margin="759.367,20.473,-8.985,0" VerticalAlignment="Top" Height="166.921" Width="245.543" FontSize="16">
-                <CheckBox x:Name="ChckboxStandard" Content="Standard" HorizontalAlignment="Left" Height="138.641" VerticalAlignment="Top" Width="233.543" Margin="104.5,0,-104.5,0" FontWeight="Bold" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+                <CheckBox x:Name="ChckboxStandard" Content="Standard" HorizontalAlignment="Left" Height="21.141" VerticalAlignment="Top" Width="102.293" Margin="104.5,0,0,0" FontWeight="Bold" Checked="standardCheckboxChecked" Unchecked="standardCheckboxUnchecked"/>
             </GroupBox>
             <GroupBox Header="Bridge" HorizontalAlignment="Left" Margin="572.303,20.987,0,0" VerticalAlignment="Top" Height="89.884" Width="166.064" FontSize="16"/>
             <GroupBox Header="Output Options" HorizontalAlignment="Left" Margin="29.916,99.652,0,0" VerticalAlignment="Top" Height="85.742" Width="303.047" FontSize="16"/>
+            
             <GroupBox x:Name="gboxEnv" Header="Working Environment" HorizontalAlignment="Left" Margin="378.339,105.398,0,0" VerticalAlignment="Top" Height="82.175" Width="365.028" FontSize="16"></GroupBox>
-            <CheckBox x:Name="chckboxDry" Content="Dry" HorizontalAlignment="Left" Margin="391.47,136.254,0,0" VerticalAlignment="Top" Height="22.886" Width="51.895" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckboxWet" Content="Wet" HorizontalAlignment="Left" Margin="456.846,136.254,0,0" VerticalAlignment="Top" Height="22.886" Width="73.327" FontSize="16" Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckboxExp" Content="Explosive&#xD;&#xA;(ATEX)" HorizontalAlignment="Left" Margin="642.88,136.254,0,0" VerticalAlignment="Top" Height="40.539" Width="85.549" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <CheckBox x:Name="chckboxChem" Content="Chemical" HorizontalAlignment="Left" Margin="534.7,136.254,0,0" VerticalAlignment="Top" Height="22.886" Width="86.906" FontSize="16"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
+
+            <CheckBox x:Name="chckboxDry" Content="Dry" HorizontalAlignment="Left" Margin="391.47,136.254,0,0" VerticalAlignment="Top" Height="22.886" Width="51.895" FontSize="16"  Checked="workingenvironmentCheckboxChecked" Unchecked="workingenvironmentCheckboxUnchecked"/>
+            <CheckBox x:Name="chckboxWet" Content="Wet" HorizontalAlignment="Left" Margin="456.846,136.254,0,0" VerticalAlignment="Top" Height="22.886" Width="73.327" FontSize="16" Checked="workingenvironmentCheckboxChecked" Unchecked="workingenvironmentCheckboxUnchecked"/>
+            <CheckBox x:Name="chckboxExp" Content="Explosive&#xD;&#xA;(ATEX)" HorizontalAlignment="Left" Margin="642.88,136.254,0,0" VerticalAlignment="Top" Height="40.539" Width="85.549" FontSize="16"  Checked="workingenvironmentCheckboxChecked" Unchecked="workingenvironmentCheckboxUnchecked"/>
+            <CheckBox x:Name="chckboxChem" Content="Chemical" HorizontalAlignment="Left" Margin="534.7,136.254,0,0" VerticalAlignment="Top" Height="22.886" Width="86.906" FontSize="16"  Checked="workingenvironmentCheckboxChecked" Unchecked="workingenvironmentCheckboxUnchecked"/>
+          
             <GroupBox Header="Specifications" HorizontalAlignment="Left" Margin="414.489,199.973,0,0" VerticalAlignment="Top" Height="301.521" Width="256.296" FontSize="16"/>
             <GroupBox Header="Dimensions" HorizontalAlignment="Left" Margin="5.41,501.494,0,0" VerticalAlignment="Top" Height="299.113" Width="611.606" FontSize="16" Grid.RowSpan="2"/>
             <CheckBox x:Name="chckboxAxial" Content="Axial" HorizontalAlignment="Left" Margin="444.311,270.102,0,0" VerticalAlignment="Top" FontSize="16" Width="109.342" Height="18.359"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
@@ -77,7 +83,7 @@
             <Label Content="Alle mål er i millimeter!" HorizontalAlignment="Left" Margin="421.371,553.108,0,0" VerticalAlignment="Top" Width="173.366" FontWeight="Bold" FontSize="14"/>
             <Button x:Name="btnCheckForm_Copy" Content="Load form" HorizontalAlignment="Left" Margin="715.313,34.108,0,0" VerticalAlignment="Top" Width="85" Click="onClickLoadForm" Height="33.8" Grid.Row="1"/>
             <StackPanel>
-            <Image Margin="8.156,214.312,616.811,253.081" Source="Image1.png"/>
+                <Image Margin="8.156,214.312,616.811,253.081" Source="Image1.png"/>
             </StackPanel>
             <GroupBox x:Name="Angle" Header="Angle" HorizontalAlignment="Left" Margin="679.772,199.973,-5,0" VerticalAlignment="Top" Height="359.135" Width="321.153" FontSize="16" RenderTransformOrigin="0.488,0.541">
                 <Image Margin="101.492,0,20.508,109" Source="Image2.png" Stretch="Fill"/>

@@ -10,7 +10,7 @@ namespace Interfaces
         int Id { get; set; }
         IForm Form { get; set; }
         ICustomer Customer { get; set; }
+        IContactPerson ContactPerson { get; set; }
         DateTime OrderDate { get; set; }
-        IContactPerson ConPerson { get; set; }
     }
 }

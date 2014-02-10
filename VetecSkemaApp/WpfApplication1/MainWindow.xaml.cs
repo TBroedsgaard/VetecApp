@@ -109,7 +109,8 @@ namespace WpfApplication1
             return icp;
         }
 
-        private void checkboxChecked(object sender, RoutedEventArgs e)
+        //outputoptions checkbox checkced Eventhandlers
+        private void outputCheckboxChecked(object sender, RoutedEventArgs e)
         {
             //mvv checkbox - checked = disable 420, 2wire, 3wire
             if (chckboxMvv.IsChecked == true)
@@ -118,14 +119,14 @@ namespace WpfApplication1
                 chckbox2wire.IsEnabled = false;
                 chckbox3wire.IsEnabled = false;
             }
-            
+
 
             //420ma checkbox - checked = disable mvv
             if (chckbox420ma.IsChecked == true)
             {
                 chckboxMvv.IsEnabled = false;
             }
-            
+
 
             //2wire checkbox - checked = disable 3wire
             if (chckbox2wire.IsChecked == true)
@@ -134,7 +135,7 @@ namespace WpfApplication1
                 chckbox420ma.IsChecked = true;
                 chckbox420ma.IsEnabled = false;
             }
-            
+
             //3wire checkbox - checked = disable 2 wire
             if (chckbox3wire.IsChecked == true)
             {
@@ -144,55 +145,61 @@ namespace WpfApplication1
             }
 
            
-            
-
-            //single checkbox - checked = disable double
+        }
+        //outputoptions checkbox unchecked eventhandler
+        private void outputCheckboxUnchecked(object sender, RoutedEventArgs e)
+        {
+            //mvv unchecked
+            if (chckboxMvv.IsChecked == false)
+            {
+                chckbox420ma.IsEnabled = true;
+                chckbox2wire.IsEnabled = true;
+                chckbox3wire.IsEnabled = true;
+            }
+            //420ma
+            if (chckbox420ma.IsChecked == false)
+            {
+                chckboxMvv.IsEnabled = true;
+            }
+            //2wire
+            if (chckbox2wire.IsChecked == false)
+            {
+                chckbox3wire.IsEnabled = true;
+            }
+        }
+        // bridge checkbox event handlers
+        private void bridgecheckboxChecked(object sender, RoutedEventArgs e)
+        {  //single checkbox - checked = disable double
             if (chckboxSingle.IsChecked == true)
             {
                 chckboxDouble.IsEnabled = false;
             }
-            
+
 
             //double checkbox - checked = disable single
             if (chckboxDouble.IsChecked == true)
             {
                 chckboxSingle.IsEnabled = false;
             }
-            
 
-            //350 ohm checkbox - checked = disable other ohms
-            if (chckbox350.IsChecked == true)
+        }
+        private void bridgeCheckboxUnchecked(object sender, RoutedEventArgs e)
+        {   //single
+            if (chckboxSingle.IsChecked == false)
             {
-                chckbox700.IsEnabled = false;
-                chckbox1000.IsEnabled = false;
-                chckbox2000.IsEnabled = false;
+                chckboxDouble.IsEnabled = true;
             }
-            
+            //double
+            if (chckboxDouble.IsChecked == false)
+            {
+                chckboxSingle.IsEnabled = true;
+            }
+        }
 
-            //700 ohm checkbox - checked = disable other ohms
-            if (chckbox700.IsChecked == true)
-            {
-                chckbox350.IsEnabled = false;
-                chckbox1000.IsEnabled = false;
-                chckbox2000.IsEnabled = false;
-            }
-            //1000 ohm checkbox - checked = disable other ohms
-            if (chckbox1000.IsChecked == true)
-            {
-                chckbox700.IsEnabled = false;
-                chckbox350.IsEnabled = false;
-                chckbox2000.IsEnabled = false;
-            }
-
-            //2000 ohm checkbox - checked = disable other ohms
-            if (chckbox2000.IsChecked == true)
-            {
-                chckbox700.IsEnabled = false;
-                chckbox1000.IsEnabled = false;
-                chckbox350.IsEnabled = false;
-            }
-            
-
+        //working environment eventhandlers
+        private void workingenvironmentCheckboxChecked(object sender, RoutedEventArgs e)
+        {  
+            #region working environment2
             //dry checkbox
             if (chckboxDry.IsChecked == true)
             {
@@ -222,6 +229,113 @@ namespace WpfApplication1
                 chckboxWet.IsEnabled = false;
                 chckboxChem.IsEnabled = false;
             }
+
+            #endregion
+        }
+        private void workingenvironmentCheckboxUnchecked(object sender, RoutedEventArgs e)
+        {
+            #region 
+            //dry
+            if (chckboxDry.IsChecked == false)
+            {
+                chckboxChem.IsEnabled = true;
+                chckboxWet.IsEnabled = true;
+                chckboxExp.IsEnabled = true;
+            }
+            //wet
+            if (chckboxWet.IsChecked == false)
+            {
+                chckboxChem.IsEnabled = true;
+                chckboxDry.IsEnabled = true;
+                chckboxExp.IsEnabled = true;
+            }
+            //chem
+            if (chckboxChem.IsChecked == false)
+            {
+                chckboxDry.IsEnabled = true;
+                chckboxWet.IsEnabled = true;
+                chckboxExp.IsEnabled = true;
+            }
+            //exp
+            if (chckboxExp.IsChecked == false)
+            {
+                chckboxChem.IsEnabled = true;
+                chckboxWet.IsEnabled = true;
+                chckboxDry.IsEnabled = true;
+            }
+            #endregion
+        }
+
+        private void bridgeResistanceCheckboxChecked(object sender, RoutedEventArgs e)
+        { //350 ohm checkbox - checked = disable other ohms
+            if (chckbox350.IsChecked == true)
+            {
+                chckbox700.IsEnabled = false;
+                chckbox1000.IsEnabled = false;
+                chckbox2000.IsEnabled = false;
+            }
+
+
+            //700 ohm checkbox - checked = disable other ohms
+            if (chckbox700.IsChecked == true)
+            {
+                chckbox350.IsEnabled = false;
+                chckbox1000.IsEnabled = false;
+                chckbox2000.IsEnabled = false;
+            }
+            //1000 ohm checkbox - checked = disable other ohms
+            if (chckbox1000.IsChecked == true)
+            {
+                chckbox700.IsEnabled = false;
+                chckbox350.IsEnabled = false;
+                chckbox2000.IsEnabled = false;
+            }
+
+            //2000 ohm checkbox - checked = disable other ohms
+            if (chckbox2000.IsChecked == true)
+            {
+                chckbox700.IsEnabled = false;
+                chckbox1000.IsEnabled = false;
+                chckbox350.IsEnabled = false;
+            }
+        }
+        private void bridgeResistanceCheckboxUnchecked(object sender, RoutedEventArgs e)
+        {
+            //350
+            if (chckbox350.IsChecked == false)
+            {
+                chckbox700.IsEnabled = true;
+                chckbox1000.IsEnabled = true;
+                chckbox2000.IsEnabled = true;
+            }
+            //700
+            if (chckbox700.IsChecked == false)
+            {
+                chckbox350.IsEnabled = true;
+                chckbox1000.IsEnabled = true;
+                chckbox2000.IsEnabled = true;
+            }
+            //1000
+            if (chckbox1000.IsChecked == false)
+            {
+                chckbox700.IsEnabled = true;
+                chckbox350.IsEnabled = true;
+                chckbox2000.IsEnabled = true;
+            }
+            //2000
+            if (chckbox2000.IsChecked == false)
+            {
+                chckbox700.IsEnabled = true;
+                chckbox1000.IsEnabled = true;
+                chckbox350.IsEnabled = true;
+            }
+        }
+
+
+        private void checkboxChecked(object sender, RoutedEventArgs e)
+        {
+          
+          
             //axial
             if (chckboxAxial.IsChecked == true)
             {
@@ -256,23 +370,7 @@ namespace WpfApplication1
 
         private void checkboxUnchecked(object sender, RoutedEventArgs e)
         {
-            //mvv unchecked
-            if (chckboxMvv.IsChecked == false)
-            {
-                chckbox420ma.IsEnabled = true;
-                chckbox2wire.IsEnabled = true;
-                chckbox3wire.IsEnabled = true;
-            }
-            //420ma
-            if (chckbox420ma.IsChecked == false)
-            {
-                chckboxMvv.IsEnabled = true;
-            }
-            //2wire
-            if (chckbox2wire.IsChecked == false)
-            {
-                chckbox3wire.IsEnabled = true;
-            }
+           
             //single
             if (chckboxSingle.IsChecked == false)
             {
@@ -283,62 +381,8 @@ namespace WpfApplication1
             {
                 chckboxSingle.IsEnabled = true;
             }
-            //350
-            if (chckbox350.IsChecked == false)
-            {
-                chckbox700.IsEnabled = true;
-                chckbox1000.IsEnabled = true;
-                chckbox2000.IsEnabled = true;
-            }
-            //700
-            if (chckbox700.IsChecked == false)
-            {
-                chckbox350.IsEnabled = true;
-                chckbox1000.IsEnabled = true;
-                chckbox2000.IsEnabled = true;
-            }
-            //1000
-            if (chckbox1000.IsChecked == false)
-            {
-                chckbox700.IsEnabled = true;
-                chckbox350.IsEnabled = true;
-                chckbox2000.IsEnabled = true;
-            }
-            //2000
-            if (chckbox2000.IsChecked == false)
-            {
-                chckbox700.IsEnabled = true;
-                chckbox1000.IsEnabled = true;
-                chckbox350.IsEnabled = true;
-            }
-            //dry
-            if (chckboxDry.IsChecked == false)
-            {
-                chckboxChem.IsEnabled = true;
-                chckboxWet.IsEnabled = true;
-                chckboxExp.IsEnabled = true;
-            }
-            //wet
-            if (chckboxWet.IsChecked == false)
-            {
-                chckboxChem.IsEnabled = true;
-                chckboxDry.IsEnabled = true;
-                chckboxExp.IsEnabled = true;
-            }
-            //chem
-            if (chckboxChem.IsChecked == false)
-            {
-                chckboxDry.IsEnabled = true;
-                chckboxWet.IsEnabled = true;
-                chckboxExp.IsEnabled = true;
-            }
-            //exp
-            if (chckboxExp.IsChecked == false)
-            {
-                chckboxChem.IsEnabled = true;
-                chckboxWet.IsEnabled = true;
-                chckboxDry.IsEnabled = true;
-            }
+          
+          
             //axial
             if (chckboxAxial.IsChecked == false)
             {
@@ -398,15 +442,12 @@ namespace WpfApplication1
 
         private void onClickSaveForm(object sender, RoutedEventArgs e)
         {
-            if (ValidateFormNotNull())
-            {
-
-
+            
                 IOrder order = controller.CreateOrder();
                 order.Form = createForm();
-                order.OrderDate = DateTime.Now;
-                order.ConPerson = CreateContactPerson();
+                order.ContactPerson = CreateContactPerson();
                 
+                 order.OrderDate = DateTime.Now;
                 
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "Form file | *.form";
@@ -419,9 +460,7 @@ namespace WpfApplication1
                 //StreamWriter sw = new StreamWriter(sfd.FileName);
                 //sw.WriteLine(serializedString);
                 //sw.Close();
-            }
-            else MessageBox.Show("please enter all required fields");
-
+           
         }
 
         
@@ -601,12 +640,13 @@ namespace WpfApplication1
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            chckboxHose.IsEnabled = false;   
+            //bridge resistance
+              
             chckbox1000.IsEnabled = false;   
             chckbox2000.IsEnabled = false;
             chckbox700.IsEnabled = false;
             chckbox350.IsEnabled = false;
-            chckboxHose.IsEnabled = false;                     
+                                
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
@@ -616,8 +656,33 @@ namespace WpfApplication1
             chckbox2000.IsEnabled = true;
             chckbox700.IsEnabled =  true;
             chckbox350.IsEnabled =  true;
-            chckboxHose.IsEnabled = true;   
-        }                                    
+               
+        }
+
+        private void standardCheckboxChecked(object sender, RoutedEventArgs e)
+        {
+            chckbox1000.IsChecked = false;
+            chckbox2000.IsChecked = false;
+            chckbox700.IsChecked = false;
+            chckbox350.IsChecked = false;
+            
+            chckbox1000.IsEnabled = false;
+            chckbox2000.IsEnabled = false;
+            chckbox700.IsEnabled = false;
+            chckbox350.IsEnabled = false;
+        }
+        private void standardCheckboxUnchecked(object sender, RoutedEventArgs e)
+        {
+            chckbox1000.IsEnabled = true;
+            chckbox2000.IsEnabled = true;
+            chckbox700.IsEnabled = true;
+            chckbox350.IsEnabled = true;
+                             
+            chckbox1000.IsEnabled = true;
+            chckbox2000.IsEnabled = true;
+            chckbox700.IsEnabled = true;
+            chckbox350.IsEnabled = true;
+        }
                                              
         //private void addFormToList(object sender, RoutedEventArgs e)
         //{
