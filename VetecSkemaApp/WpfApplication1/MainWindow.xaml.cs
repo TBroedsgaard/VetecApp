@@ -57,7 +57,7 @@ namespace WpfApplication1
 
         private IForm createForm()
         {
-           
+            
             int DimA = int.Parse(txtboxA.Text);
             int DimB = int.Parse(txtboxB.Text);
             int DimC = int.Parse(txtboxA.Text);
@@ -438,34 +438,47 @@ namespace WpfApplication1
                 warningImg.Visibility = Visibility.Visible;
                 warningImg.ToolTip = "Min ø 10  max 100 ";
                 btnCheckForm.IsEnabled = false;
+                txtboxG.Background = Brushes.Red;
             }
             else
+            
             {
                 warningImg.Visibility = Visibility.Hidden;
                 btnCheckForm.IsEnabled = true;
+                txtboxG.Background = Brushes.LimeGreen;
             }
         }
 
         private void onClickSaveForm(object sender, RoutedEventArgs e)
         {
-            
-                IOrder order = controller.CreateOrder();
-                order.Form = createForm();
-                order.ContactPerson = CreateContactPerson();
-                
-                 order.OrderDate = DateTime.Now;
-                
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "Form file | *.form";
-                sfd.DefaultExt = "form";
-                sfd.ShowDialog();
+                ValidateFormNotNull();
 
-                string filename = sfd.FileName;
+                if (ValidateFormNotNull())
+                {
 
-                controller.SaveOrder(filename, order);
-                //StreamWriter sw = new StreamWriter(sfd.FileName);
-                //sw.WriteLine(serializedString);
-                //sw.Close();
+
+                    IOrder order = controller.CreateOrder();
+                    order.Form = createForm();
+                    order.ContactPerson = CreateContactPerson();
+
+                    order.OrderDate = DateTime.Now;
+
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "Form file | *.form";
+                    sfd.DefaultExt = "form";
+                    sfd.ShowDialog();
+
+                    string filename = sfd.FileName;
+
+                    controller.SaveOrder(filename, order);
+                    //StreamWriter sw = new StreamWriter(sfd.FileName);
+                    //sw.WriteLine(serializedString);
+                    //sw.Close();
+                }
+                else
+                {
+                    MessageBox.Show("All input areas must be filled");
+                }
            
         }
 
@@ -704,6 +717,151 @@ namespace WpfApplication1
             chckbox700.IsEnabled = true;
             chckbox350.IsEnabled = true;
         }
+
+        private void txtboxLoadCap_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                int.Parse( txtboxLoadCap.Text);
+                txtboxLoadCap.Background = Brushes.LimeGreen;
+            }
+            catch (Exception)
+            {
+                txtboxLoadCap.Background = Brushes.Red;
+                
+            }
+        }
+      
+
+        private void txtboxF__TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxF_.Text != "")
+            {
+                        try
+                   {
+                       int.Parse(txtboxF_.Text);
+                       txtboxF_.Background = Brushes.LimeGreen;
+                   }
+                   catch (Exception)
+                   {
+                       txtboxF_.Background = Brushes.Red;
+
+                   }
+            }
+            else
+            {
+                txtboxF_.Background = Brushes.White;
+            }
+           
+        }
+
+        private void txtboxA_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxA.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxA.Text);
+                    txtboxA.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxA.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxA.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxB.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxB.Text);
+                    txtboxB.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxB.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxB.Background = Brushes.White;
+            }
+
+        }
+
+        private void txtboxC_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxC.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxC.Text);
+                    txtboxC.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxC.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxC.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxD_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxD.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxD.Text);
+                    txtboxD.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxD.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxD.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxE_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxE.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxE.Text);
+                    txtboxE.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxE.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxE.Background = Brushes.White;
+            }
+
+        }
+       
                                              
         //private void addFormToList(object sender, RoutedEventArgs e)
         //{
