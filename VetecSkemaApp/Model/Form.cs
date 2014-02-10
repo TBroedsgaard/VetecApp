@@ -34,11 +34,11 @@ namespace Model
         public bool SPConnector { get; set; }
         public bool SPGreaseway { get; set; }
         public int SPCLength { get; set; }
-        public int AOLMF { get; set; }
-        public int AOLLF { get; set; }
-        public int AOLHF { get; set; }
-        public int AOLLFDegrees { get; set; }
-        public int AOLHFDegrees { get; set; }
+        public int AOLMF { get; set; }                 ////
+        public int AOLLF { get; set; }                 ////
+        public int AOLHF { get; set; }                 ////
+        public int AOLLFDegrees { get; set; }          ////
+        public int AOLHFDegrees { get; set; }          ////
         public int DimFPlus { get; set; }
         public int DimA { get; set; }
         public int DimB { get; set; }

@@ -17,6 +17,7 @@ using Controller;
 using Interfaces;
 using Microsoft.Win32;
 
+
 namespace WpfApplication1
 {
     /// <summary>
@@ -94,10 +95,15 @@ namespace WpfApplication1
             bool SPGreaseway = chckboxGrease.IsChecked.Value;
             bool SPKeeplateEnd = chckboxKeep.IsChecked.Value;
             bool SPOtherEnd = chckboxOther.IsChecked.Value;
-
+            
+            int AOLMF = int.Parse(txtboxAolmf.Text);
+            int AOLLF = int.Parse(txtboxAollf.Text);
+            int AOLHF = int.Parse(txtboxAolhf.Text);
+            int AolLfDegreees = int.Parse(TxtboxAollfDegrees.Text);
+            int AolHfdegrees = int.Parse(txtboxAolhfDegrees.Text);
            
             iFormz = controller.CreateForm(DimA, DimB, DimC, DimD, DimE, DimF, DimFPlus, DimG, DimTol, LPCapacity,
-                        OO2Wire, OO3Wire, OO420mA, OOBDouble, OOBR1000, OOBR2000, OOBR700, OOBSingle, OOHHose, OOMvV, SPAxial, SPRadial, SPConnector,SPGland,SPGreaseway,SPKeeplateEnd,SPOtherEnd, DimH, OOWet, OODry, OOExp, OOChem, SPCLength);
+                        OO2Wire, OO3Wire, OO420mA, OOBDouble, OOBR1000, OOBR2000, OOBR700, OOBSingle, OOHHose, OOMvV, SPAxial, SPRadial, SPConnector,SPGland,SPGreaseway,SPKeeplateEnd,SPOtherEnd, DimH, OOWet, OODry, OOExp, OOChem, SPCLength,AOLHF, AOLLF,AOLHF,AolLfDegreees,AolHfdegrees );
             return iFormz;
         }
 
@@ -554,7 +560,7 @@ namespace WpfApplication1
         }
         private bool validateAngle()
         {
-            if (txtboxFDegree.Text != "" && txtboxFMDegree1.Text != "" && txtboxFMDegree2.Text != "" && txtboxFPDegree1.Text != "" &&txtboxFPDegree2.Text != "")
+            if (txtboxAolhf.Text != "" && txtboxAolhfDegrees.Text != "" && TxtboxAollfDegrees.Text != "" && txtboxAollf.Text != "" && txtboxAolmf.Text != "")
             {
                 return true;
             }
@@ -571,7 +577,7 @@ namespace WpfApplication1
             string filename = ofd.FileName;
 
             IOrder order = controller.LoadOrder(filename);
-
+            loadIContactPersontoUI(order.ContactPerson);
             loadFormToUI(order.Form);
             //try
             //{
@@ -632,6 +638,21 @@ namespace WpfApplication1
             chckboxGland.IsChecked = form.SPGland;
             chckboxConnector.IsChecked = form.SPConnector;
             chckboxGrease.IsChecked = form.SPGreaseway;
+
+            txtboxAolhf.Text = form.AOLHF.ToString();
+            txtboxAollf.Text = form.AOLLF.ToString();
+            txtboxAolmf.Text = form.AOLMF.ToString();
+            txtboxAolhfDegrees.Text = form.AOLHFDegrees.ToString();
+            TxtboxAollfDegrees.Text = form.AOLLF.ToString();
+        }
+
+        private void loadIContactPersontoUI(IContactPerson icontactperson)
+        {
+            ContactNametxtbox.Text = icontactperson.Name;
+            CompanyNametxtbox.Text = icontactperson.CompanyName;
+            EmailTextbox.Text = icontactperson.Email;
+            TelNoTextbox.Text = icontactperson.Phone;
+
         }
 
 
