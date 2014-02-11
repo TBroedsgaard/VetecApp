@@ -27,13 +27,20 @@ namespace WpfApplication1
     {
         private SubController controller;
         private IForm iFormz;
+
         private IContactPerson icp;
+
+        private WeightDrawing drawing;
+
 
         public MainWindow()
         {
             controller = new SubController();
             
             InitializeComponent();
+
+            drawing = new WeightDrawing(canvas);
+
         }
 
         private void outputHelperClicked(object sender, MouseButtonEventArgs e)
@@ -421,31 +428,23 @@ namespace WpfApplication1
             }
         }
 
-        private void diameterGTextChanged(object sender, TextChangedEventArgs e)
-        {
-            //int gTal = Convert.ToInt32(txtboxG.Text);
-            int gtallio;
+        
 
-            if (int.TryParse(txtboxG.Text, out gtallio) == false)
+        private void dimTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            uint A = 0, B = 0, C = 0, D = 0, E = 0, F = 0, G = 0, H = 0;
+
+            if (uint.TryParse(txtboxA.Text, out A)
+                && uint.TryParse(txtboxB.Text, out B)
+                && uint.TryParse(txtboxC.Text, out C)
+                && uint.TryParse(txtboxD.Text, out D)
+                && uint.TryParse(txtboxE.Text, out E)
+                && uint.TryParse(txtboxF.Text, out F)
+                && uint.TryParse(txtboxG.Text, out G)
+                && uint.TryParse(txtboxH.Text, out H)
+                )
             {
-                warningImg.Visibility = Visibility.Visible;
-                warningImg.ToolTip = "Du må kun bruge tal og komma/decimal!";
-                
-            }
-            
-            if (gtallio > 500 || gtallio < 10)
-            {
-                warningImg.Visibility = Visibility.Visible;
-                warningImg.ToolTip = "Min ø 10  max 100 ";
-                btnCheckForm.IsEnabled = false;
-                txtboxG.Background = Brushes.Red;
-            }
-            else
-            
-            {
-                warningImg.Visibility = Visibility.Hidden;
-                btnCheckForm.IsEnabled = true;
-                txtboxG.Background = Brushes.LimeGreen;
+                drawing.DrawWeight(A, B, C, D, E, F, G, H);
             }
         }
 
@@ -690,7 +689,7 @@ namespace WpfApplication1
             chckbox2000.IsEnabled = true;
             chckbox700.IsEnabled =  true;
             chckbox350.IsEnabled =  true;
-               
+ 
         }
 
         private void standardCheckboxChecked(object sender, RoutedEventArgs e)
@@ -735,6 +734,7 @@ namespace WpfApplication1
 
         private void txtboxF__TextChanged(object sender, TextChangedEventArgs e)
         {
+            dimTextBox_TextChanged(sender, e);
             if (txtboxF_.Text != "")
             {
                         try
@@ -753,10 +753,13 @@ namespace WpfApplication1
                 txtboxF_.Background = Brushes.White;
             }
            
+
+            chckboxHose.IsEnabled = true;   
         }
 
         private void txtboxA_TextChanged(object sender, TextChangedEventArgs e)
         {
+             dimTextBox_TextChanged(sender, e);
             if (txtboxA.Text != "")
             {
                 try
@@ -778,6 +781,7 @@ namespace WpfApplication1
 
         private void txtboxB_TextChanged(object sender, TextChangedEventArgs e)
         {
+            dimTextBox_TextChanged(sender, e);
             if (txtboxB.Text != "")
             {
                 try
@@ -800,6 +804,7 @@ namespace WpfApplication1
 
         private void txtboxC_TextChanged(object sender, TextChangedEventArgs e)
         {
+             dimTextBox_TextChanged(sender, e);
             if (txtboxC.Text != "")
             {
                 try
@@ -821,6 +826,8 @@ namespace WpfApplication1
 
         private void txtboxD_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+            dimTextBox_TextChanged(sender, e);
             if (txtboxD.Text != "")
             {
                 try
@@ -842,6 +849,7 @@ namespace WpfApplication1
 
         private void txtboxE_TextChanged(object sender, TextChangedEventArgs e)
         {
+             dimTextBox_TextChanged(sender, e);
             if (txtboxE.Text != "")
             {
                 try
@@ -861,7 +869,78 @@ namespace WpfApplication1
             }
 
         }
+
+        private void txtboxH_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+            if (txtboxH.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxH.Text);
+                    txtboxH.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxH.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxH.Background = Brushes.White;
+            }
+
+        }
+
+        private void txtboxD_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+        }
+
+        private void diameterGTextChanged(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+            //int gTal = Convert.ToInt32(txtboxG.Text);
+            int gtallio;
+
+            if (int.TryParse(txtboxG.Text, out gtallio) == false)
+            {
+                warningImg.Visibility = Visibility.Visible;
+                warningImg.ToolTip = "Du må kun bruge tal og komma/decimal!";
+
+            }
+
+            if (gtallio > 500 || gtallio < 10)
+            {
+                warningImg.Visibility = Visibility.Visible;
+                warningImg.ToolTip = "Min ø 10  max 100 ";
+                btnCheckForm.IsEnabled = false;
+                txtboxG.Background = Brushes.Red;
+            }
+            else
+            {
+                warningImg.Visibility = Visibility.Hidden;
+                btnCheckForm.IsEnabled = true;
+                txtboxG.Background = Brushes.LimeGreen;
+            }
+
+            dimTextBox_TextChanged(sender, e);
+        }
+
+
+      
+
+    
+
+        
+           
+
+        
+
        
+
+  
                                              
         //private void addFormToList(object sender, RoutedEventArgs e)
         //{
