@@ -26,12 +26,16 @@ namespace WpfApplication1
     {
         private SubController controller;
         private IForm iFormz;
+        private WeightDrawing drawing;
 
         public MainWindow()
         {
             controller = new SubController();
             
             InitializeComponent();
+
+            drawing = new WeightDrawing(canvas);
+
         }
 
         private void outputHelperClicked(object sender, MouseButtonEventArgs e)
@@ -385,6 +389,26 @@ namespace WpfApplication1
                 warningImg.Visibility = Visibility.Hidden;
                 btnCheckForm.IsEnabled = true;
             }
+
+            dimTextBox_TextChanged(sender, e);
+        }
+
+        private void dimTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            uint A = 0, B = 0, C = 0, D = 0, E = 0, F = 0, G = 0, H = 0;
+
+            if (uint.TryParse(txtboxA.Text, out A)
+                && uint.TryParse(txtboxB.Text, out B)
+                && uint.TryParse(txtboxC.Text, out C)
+                && uint.TryParse(txtboxD.Text, out D)
+                && uint.TryParse(txtboxE.Text, out E)
+                && uint.TryParse(txtboxF.Text, out F)
+                && uint.TryParse(txtboxG.Text, out G)
+                && uint.TryParse(txtboxH.Text, out H)
+                )
+            {
+                drawing.DrawWeight(A, B, C, D, E, F, G, H);
+            }
         }
 
         private void onClickSaveForm(object sender, RoutedEventArgs e)
@@ -499,6 +523,54 @@ namespace WpfApplication1
             chckbox700.IsEnabled =  true;
             chckbox350.IsEnabled =  true;
             chckboxHose.IsEnabled = true;   
+        }
+
+        private void txtboxD_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+
+        }
+
+        private void txtboxF_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+
+        }
+
+        private void txtboxE_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+
+        }
+
+        private void txtboxC_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            dimTextBox_TextChanged(sender, e);
+        }
+
+        private void txtboxA_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+
+        }
+
+        private void txtboxF__TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            dimTextBox_TextChanged(sender, e);
+        }
+
+        private void txtboxB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            dimTextBox_TextChanged(sender, e);
+        }
+
+        private void txtboxH_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            dimTextBox_TextChanged(sender, e);
         }                                    
                                              
         //private void addFormToList(object sender, RoutedEventArgs e)
