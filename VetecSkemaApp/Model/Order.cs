@@ -10,16 +10,17 @@ namespace Model
     [Serializable]
     public class Order : IOrder
     {
-        public int Id { get; set; }
+        // public int Id { get; set; }
         public IForm Form { get; set; }
-        public ICustomer Customer { get; set; }
         public DateTime OrderDate { get; set; }
+        public IContactPerson ContactPerson { get; set; }
+
 
         [JsonConstructor]
-        public Order(Form form, Customer customer)
+        public Order(Form form, ContactPerson contactperson)
         {
             Form = form;
-            Customer = customer;
+            ContactPerson = contactperson;
 
         }
 
