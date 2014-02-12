@@ -32,9 +32,9 @@ namespace Controller
         public IOrder CreateOrder()
         {
             Order order = new Order();
-            order.Id = 1;
-            order.Customer = new Customer();
-            order.Form = new Form();
+            //order.Id = 1;
+            //order.Customer = new Customer();
+            //order.Form = new Form();
 
             return order;
         }

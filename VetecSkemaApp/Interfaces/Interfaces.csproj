@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IContactPerson.cs" />
-    <Compile Include="ICustomer.cs" />
     <Compile Include="IDataAccess.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="IOrder.cs" />

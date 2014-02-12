@@ -450,7 +450,7 @@ namespace WpfApplication1
 
         private void onClickSaveForm(object sender, RoutedEventArgs e)
         {
-                ValidateFormNotNull();
+                //ValidateFormNotNull();
 
                 if (ValidateFormNotNull())
                 {
