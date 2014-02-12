@@ -505,9 +505,37 @@ namespace WpfApplication1
         private bool validateloadpincapacity()
         {
             if (txtboxLoadCap.Text != "")
-            { return true; }
+            {
+                    try
+                    {
+                        
+                        if (int.Parse(txtboxLoadCap.Text) >= 200 && int.Parse(txtboxLoadCap.Text) <= 3000000)
+                        {
+                            
+                            return true;
+                        }
+                        else
+                        {
+                            
+                            return false;
+                        }
+                        
+                        
+                    }
+                    
+                   catch (Exception)
+                   {
+
+                       return false;
+                   }
+
+                
+                    }
+           
             return false;
         }
+
+
         private bool validateWorkingEnvironment()
         {   
             if (chckboxExp !=null || chckboxWet != null || chckboxDry !=null ||chckboxChem != null)
@@ -557,10 +585,32 @@ namespace WpfApplication1
             if (txtboxF_.Text != "" && txtboxA.Text != "" && txtboxB.Text != "" && txtboxC.Text != "" &&
             txtboxD.Text != "" && txtboxE.Text != "" &&  txtboxF.Text != "" && txtboxG.Text != "" && txtboxH.Text != "")
             {
-                return true;
+                
+                    try
+                    {
+                        int.Parse(txtboxF_.Text); int.Parse(txtboxA.Text); int.Parse(txtboxB.Text);
+                        int.Parse(txtboxC.Text); int.Parse(txtboxD.Text); int.Parse(txtboxE.Text);
+                        int.Parse(txtboxG.Text); int.Parse(txtboxLoadCap.Text); int.Parse(txtboxAolhf.Text);
+                        int.Parse(txtboxAolhfDegrees.Text); int.Parse(txtboxAollf.Text); int.Parse(TxtboxAollfDegrees.Text);
+                        int.Parse(txtboxAolmf.Text);
+                        int.Parse(txtboxGTol.Text);
+                       
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+
+                    }
+               
             }
             return false;
         }
+
+
+
+
+
         private bool validateContact()
         {
             if (ContactNametxtbox.Text != "" && CompanyNametxtbox.Text != null && EmailTextbox.Text != null && TelNoTextbox.Text!= "")
@@ -578,6 +628,8 @@ namespace WpfApplication1
             }
             return false;
         }
+
+
     
        
         private void onClickLoadForm(object sender, RoutedEventArgs e)
@@ -721,13 +773,21 @@ namespace WpfApplication1
         {
             try
             {
-                int.Parse( txtboxLoadCap.Text);
-                txtboxLoadCap.Background = Brushes.LimeGreen;
+                int.Parse(txtboxLoadCap.Text);
+                if (int.Parse(txtboxLoadCap.Text) >= 200 && int.Parse(txtboxLoadCap.Text) <= 3000000)
+                {
+                    txtboxLoadCap.Background = Brushes.LimeGreen;
+                }
+                else
+                {
+                    txtboxLoadCap.Background = Brushes.Red;
+                }
+
             }
             catch (Exception)
             {
                 txtboxLoadCap.Background = Brushes.Red;
-                
+
             }
         }
       
@@ -760,12 +820,20 @@ namespace WpfApplication1
         private void txtboxA_TextChanged(object sender, TextChangedEventArgs e)
         {
              dimTextBox_TextChanged(sender, e);
-            if (txtboxA.Text != "")
+             if (txtboxA.Text != "" )
             {
                 try
                 {
                     int.Parse(txtboxA.Text);
-                    txtboxA.Background = Brushes.LimeGreen;
+                    if (int.Parse(txtboxA.Text) >=50 && int.Parse(txtboxA.Text) <= 1500)
+                    {
+                        txtboxA.Background = Brushes.LimeGreen;
+                    }
+                    else
+                    {
+                        txtboxA.Background = Brushes.Red;
+                    }
+                    
                 }
                 catch (Exception)
                 {
@@ -896,6 +964,23 @@ namespace WpfApplication1
         private void txtboxD_TextChanged_1(object sender, TextChangedEventArgs e)
         {
             dimTextBox_TextChanged(sender, e);
+            if (txtboxD.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxD.Text);
+                    txtboxD.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxD.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxD.Background = Brushes.White;
+            }
         }
 
         private void diameterGTextChanged(object sender, TextChangedEventArgs e)
@@ -926,6 +1011,176 @@ namespace WpfApplication1
             }
 
             dimTextBox_TextChanged(sender, e);
+        }
+
+        private void txtboxAolmf_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxAolmf.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxAolmf.Text);
+                    txtboxAolmf.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxAolmf.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxAolmf.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxAollf_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxAollf.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxAollf.Text);
+                    txtboxAollf.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxAollf.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxAollf.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxAolhf_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxAolhf.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxAolhf.Text);
+                    txtboxAolhf.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxAolhf.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxAolhf.Background = Brushes.White;
+            }
+        }
+
+        private void TxtboxAollfDegrees_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxAolhf.Text != "")
+            {
+                try
+                {
+                    int.Parse(TxtboxAollfDegrees.Text);
+                    TxtboxAollfDegrees.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    TxtboxAollfDegrees.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                TxtboxAollfDegrees.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxAolhfDegrees_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxAolhfDegrees.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxAolhfDegrees.Text);
+                    txtboxAolhfDegrees.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxAolhfDegrees.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxAolhfDegrees.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxF_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dimTextBox_TextChanged(sender, e);
+            if (txtboxF.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxF.Text);
+                    txtboxF.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxF.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxF.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxGTol_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxGTol.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxGTol.Text);
+                    txtboxGTol.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxGTol.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxGTol.Background = Brushes.White;
+            }
+        }
+
+        private void txtboxCableLength_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtboxCableLength.Text != "")
+            {
+                try
+                {
+                    int.Parse(txtboxCableLength.Text);
+                    txtboxCableLength.Background = Brushes.LimeGreen;
+                }
+                catch (Exception)
+                {
+                    txtboxCableLength.Background = Brushes.Red;
+
+                }
+            }
+            else
+            {
+                txtboxCableLength.Background = Brushes.White;
+            }
+
         }
 
 

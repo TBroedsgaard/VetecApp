@@ -9,17 +9,17 @@
                 <RowDefinition Height="37*"/>
             </Grid.RowDefinitions>
 
-            <TabControl Margin="13.621,196.931,590,245.706">
-                <TabItem Header="Illustration">
-                    <Image Source="Image1.png" Stretch="Fill"/>
+            <TabControl Margin="13.621,190.394,592.304,252.243" Width="380" Height="310" Panel.ZIndex="-1">
+                <TabItem Header="Illustration" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Image Source="Image1.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="380" Height="290"/>
                 </TabItem>
-                <TabItem Header="Skitse" >
+                <TabItem Header="Skitse" HorizontalAlignment="Left" VerticalAlignment="Top" >
                     <Canvas x:Name="canvas" HorizontalAlignment="Center" VerticalAlignment="Center" Height="225" Width="350"/>
                 </TabItem>
             </TabControl>
 
 
-            <TextBox x:Name="txtboxLoadCap" HorizontalAlignment="Left" Height="20.822" Margin="195.582,59.301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107.275" FontSize="14" TextChanged="txtboxLoadCap_TextChanged"/>
+            <TextBox x:Name="txtboxLoadCap" HorizontalAlignment="Left" Height="20.822" Margin="195.582,59.301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107.275" FontSize="14" TextChanged="txtboxLoadCap_TextChanged" ToolTip="min200kg max 3000t"/>
             <Label Content="Specification Requirement Document" HorizontalAlignment="Left" Margin="29.916,10,0,0" VerticalAlignment="Top" Height="38.438" Width="429.449" FontSize="22" FontWeight="Bold"/>
             <Label Content="Load Pin Capacity:" HorizontalAlignment="Left" Margin="29.916,52.964,0,0" VerticalAlignment="Top" FontSize="16" Width="145.265" Height="30.566"/>
               
@@ -59,14 +59,14 @@
             <CheckBox x:Name="chckboxGland" Content="Gland" HorizontalAlignment="Left" Margin="444.311,367.721,0,0" VerticalAlignment="Top" FontSize="16" Width="119.342" Height="18.359"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
             <CheckBox x:Name="chckboxConnector" Content="Connector" HorizontalAlignment="Left" Margin="444.311,400.818,0,0" VerticalAlignment="Top" FontSize="16" Width="119.342" Height="28.093"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
             <CheckBox x:Name="chckboxGrease" Content="Greaseway" HorizontalAlignment="Left" Margin="444.311,433.911,0,0" VerticalAlignment="Top" FontSize="16" Width="119.342" Height="26.084"  Checked="checkboxChecked" Unchecked="checkboxUnchecked"/>
-            <TextBox x:Name="txtboxCableLength" HorizontalAlignment="Left" Height="28.317" Margin="553.985,459.995,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65.927" FontSize="16" />
+            <TextBox x:Name="txtboxCableLength" HorizontalAlignment="Left" Height="28.317" Margin="553.985,459.995,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65.927" FontSize="16" TextChanged="txtboxCableLength_TextChanged" />
             <Label x:Name="chckboxCable" Content="Cable Length" HorizontalAlignment="Left" Margin="444.311,459.995,0,0" VerticalAlignment="Top" FontSize="16" Height="28.317" Width="109.342"/>
             <Label Content="m" HorizontalAlignment="Left" Margin="624.912,462.155,0,0" VerticalAlignment="Top" FontSize="14" Height="25.909" Width="24.971"/>
 
             <TextBox x:Name="txtboxB" HorizontalAlignment="Left" Height="24" Margin="82.407,589.593,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" TextChanged="txtboxB_TextChanged" TabIndex="12"/>
             <TextBox x:Name="txtboxG" HorizontalAlignment="Left" Height="24" Margin="82.407,4.807,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" TextChanged="diameterGTextChanged" Grid.Row="1" TabIndex="17"/>
             <TextBox x:Name="txtboxD" HorizontalAlignment="Left" Height="24" Margin="82.407,648.079,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" TabIndex="14" TextChanged="txtboxD_TextChanged_1"/>
-            <TextBox x:Name="txtboxF" HorizontalAlignment="Left" Height="24" Margin="82.407,706.564,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" Grid.RowSpan="2" TabIndex="16"/>
+            <TextBox x:Name="txtboxF" HorizontalAlignment="Left" Height="24" Margin="82.407,706.564,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" Grid.RowSpan="2" TabIndex="16" TextChanged="txtboxF_TextChanged"/>
             <TextBox x:Name="txtboxE" HorizontalAlignment="Left" Height="24" Margin="82.407,678.321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" TextChanged="txtboxE_TextChanged" TabIndex="15"/>
             <TextBox x:Name="txtboxC" HorizontalAlignment="Left" Height="24" Margin="82.407,618.836,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" TextChanged="txtboxC_TextChanged" TabIndex="13"/>
             <TextBox x:Name="txtboxA" HorizontalAlignment="Left" Height="24" Margin="82.407,561.35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14" TextChanged="txtboxA_TextChanged" TabIndex="11"/>
@@ -95,7 +95,7 @@
             <TextBox x:Name="txtboxH" HorizontalAlignment="Left" Height="24" Margin="82.407,34.807,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280.556" FontSize="14"  Grid.Row="1" TextChanged="txtboxH_TextChanged"/>
 
             <Label Content="H =" HorizontalAlignment="Left" Margin="39.413,30.108,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-            <TextBox x:Name="txtboxGTol" HorizontalAlignment="Left" Height="24.857" Margin="366.47,4.807,0,0" TextWrapping="Wrap" Text="Tolerance" VerticalAlignment="Top" Width="163.703" FontSize="14" Grid.Row="1" TabIndex="18"/>
+            <TextBox x:Name="txtboxGTol" HorizontalAlignment="Left" Height="24.857" Margin="366.47,4.807,0,0" TextWrapping="Wrap" Text="Tolerance" VerticalAlignment="Top" Width="163.703" FontSize="14" Grid.Row="1" TabIndex="18" TextChanged="txtboxGTol_TextChanged"/>
             <Image x:Name="warningImg" HorizontalAlignment="Left" Height="26.85" Margin="530.173,4.807,0,0" VerticalAlignment="Top" Width="28.377" Source="Resources/1391007818_Warning.png" Visibility="Hidden" Grid.Row="1"/>
             <Label Content="Alle mål er i millimeter!" HorizontalAlignment="Left" Margin="421.371,553.108,0,0" VerticalAlignment="Top" Width="173.366" FontWeight="Bold" FontSize="14"/>
             <Button x:Name="btnCheckForm_Copy" Content="Load form" HorizontalAlignment="Left" Margin="715.313,34.108,0,0" VerticalAlignment="Top" Width="85" Click="onClickLoadForm" Height="33.8" Grid.Row="1"/>
@@ -113,11 +113,11 @@
 
 
             <Label Content="F-" HorizontalAlignment="Left" Margin="698.484,453.702,0,0" VerticalAlignment="Top" FontSize="16"/>
-            <TextBox x:Name="txtboxAolmf" HorizontalAlignment="Left" Height="23" Margin="726.704,417.866,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39.058"/>
-            <TextBox x:Name="txtboxAollf" HorizontalAlignment="Left" Height="23" Margin="727.499,453.351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38.263"/>
-            <TextBox x:Name="txtboxAolhf" HorizontalAlignment="Left" Height="23" Margin="726.704,496.088,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39.058"/>
-            <TextBox x:Name="TxtboxAollfDegrees" HorizontalAlignment="Left" Height="23" Margin="790.068,453.749,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56.636"/>
-            <TextBox x:Name="txtboxAolhfDegrees" HorizontalAlignment="Left" Height="23" Margin="790.068,496.088,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56.636" RenderTransformOrigin="0.565,1.162"/>
+            <TextBox x:Name="txtboxAolmf" HorizontalAlignment="Left" Height="23" Margin="726.704,417.866,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39.058" TextChanged="txtboxAolmf_TextChanged"/>
+            <TextBox x:Name="txtboxAollf" HorizontalAlignment="Left" Height="23" Margin="727.499,453.351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38.263" TextChanged="txtboxAollf_TextChanged"/>
+            <TextBox x:Name="txtboxAolhf" HorizontalAlignment="Left" Height="23" Margin="726.704,496.088,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39.058" TextChanged="txtboxAolhf_TextChanged"/>
+            <TextBox x:Name="TxtboxAollfDegrees" HorizontalAlignment="Left" Height="23" Margin="790.068,453.749,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56.636" TextChanged="TxtboxAollfDegrees_TextChanged"/>
+            <TextBox x:Name="txtboxAolhfDegrees" HorizontalAlignment="Left" Height="23" Margin="790.068,496.088,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56.636" RenderTransformOrigin="0.565,1.162" TextChanged="txtboxAolhfDegrees_TextChanged"/>
             <Image HorizontalAlignment="Left" Height="19.85" Margin="687.166,530.705,0,0" VerticalAlignment="Top" Width="19.85" Source="Resources/1390320817_Gnome-Dialog-Question-64.png"/>
             <TextBox x:Name="ContactNametxtbox" HorizontalAlignment="Left" Height="23" Margin="819.761,621.796,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Company Name" HorizontalAlignment="Left" Margin="719.224,593.796,0,0" VerticalAlignment="Top"/>
