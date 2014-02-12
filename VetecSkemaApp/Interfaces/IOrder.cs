@@ -7,7 +7,7 @@ namespace Interfaces
 {
     public interface IOrder
     {
-        int Id { get; set; }
+        //int Id { get; set; }
         IForm Form { get; set; }
         IContactPerson ContactPerson { get; set; }
         DateTime OrderDate { get; set; }

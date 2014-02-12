@@ -9,7 +9,7 @@ namespace Model
     [Serializable]
     public class Form : IForm
     {
-        public int Id { get; set; }
+        // public int Id { get; set; }
         public int LPCapacity { get; set; }
         public bool OOMvV { get; set; }
         public bool OO420mA { get; set; }

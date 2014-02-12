@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="IContactPerson.cs" />
     <Compile Include="IDataAccess.cs" />
-    <Compile Include="IModel.cs" />
     <Compile Include="IOrder.cs" />
     <Compile Include="IForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

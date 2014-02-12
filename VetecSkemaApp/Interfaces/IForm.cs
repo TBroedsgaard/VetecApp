@@ -7,7 +7,7 @@ namespace Interfaces
 {
     public interface IForm
     {
-        int Id { get; set; }
+        //int Id { get; set; }
         
         int LPCapacity { get; set; }
 
