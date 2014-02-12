@@ -640,6 +640,11 @@ namespace WpfApplication1
 
             string filename = ofd.FileName;
 
+            if (filename == null || filename == "")
+            {
+                return;
+            }
+
             IOrder order = controller.LoadOrder(filename);
             loadIContactPersontoUI(order.ContactPerson);
             loadFormToUI(order.Form);
