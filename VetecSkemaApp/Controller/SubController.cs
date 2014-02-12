@@ -42,6 +42,10 @@ namespace Controller
 
         public void SaveOrder(string filename, IOrder iorder)
         {
+            if (filename == null || filename == "")
+            {
+                return;
+            }
             string xml = serializeOrder(iorder);
 
             dataAccessFacade.Save(filename, xml);

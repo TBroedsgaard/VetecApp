@@ -476,7 +476,7 @@ namespace WpfApplication1
                 }
                 else
                 {
-                    MessageBox.Show("All input areas must be filled");
+                    MessageBox.Show("Incorrect or missing data");
                 }
            
         }
