@@ -96,7 +96,10 @@ namespace Controller
             //}
         }
 
-        public IForm CreateForm(int DimA, int DimB, int DimC, int DimD, int DimE, int DimF, int DimFPlus, int DimG, int DimTol, int LPCapacity, bool OO2Wire, bool OO3Wire, bool OO420mA, bool OOBDouble, bool OOBR1000, bool OOBR2000, bool OOBR700, bool OOBSingle, bool OOHHose, bool OOMvV, bool SPAxial, bool SPRadial, bool SPConnector, bool SPGland, bool SPGreaseway, bool SPKeeplateEnd, bool SPOtherEnd, int dimH, bool OOWet, bool OODry,bool OOExp,bool OOChem, int SPCLength, int Aolmf,int aollf, int aolhf, int aollfDegrees, int aolhfDegrees)
+        public IForm CreateForm(int DimA, int DimB, int DimC, int DimD, int DimE, int DimF, int DimFPlus, int DimG, int DimTol, int LPCapacity, bool OO2Wire, 
+            bool OO3Wire, bool OO420mA, bool OOBDouble, bool OOBR1000, bool OOBR2000, bool OOBR700, bool OOBSingle, bool OOHHose, bool OOMvV, bool SPAxial, 
+            bool SPRadial, bool SPConnector, bool SPGland, bool SPGreaseway, bool SPKeeplateEnd, bool SPOtherEnd, int dimH, bool OOWet, bool OODry,bool OOExp,
+            bool OOChem, int SPCLength, int Aolmf,int aollf, int aolhf, int aollfDegrees, int aolhfDegrees)
         {
             Form form = new Form();
 

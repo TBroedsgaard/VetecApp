@@ -110,7 +110,9 @@ namespace WpfApplication1
             int AolHfdegrees = int.Parse(txtboxAolhfDegrees.Text);
            
             iFormz = controller.CreateForm(DimA, DimB, DimC, DimD, DimE, DimF, DimFPlus, DimG, DimTol, LPCapacity,
-                        OO2Wire, OO3Wire, OO420mA, OOBDouble, OOBR1000, OOBR2000, OOBR700, OOBSingle, OOHHose, OOMvV, SPAxial, SPRadial, SPConnector,SPGland,SPGreaseway,SPKeeplateEnd,SPOtherEnd, DimH, OOWet, OODry, OOExp, OOChem, SPCLength,AOLHF, AOLLF,AOLHF,AolLfDegreees,AolHfdegrees );
+                        OO2Wire, OO3Wire, OO420mA, OOBDouble, OOBR1000, OOBR2000, OOBR700, OOBSingle, OOHHose, OOMvV, 
+                        SPAxial, SPRadial, SPConnector,SPGland,SPGreaseway,SPKeeplateEnd,SPOtherEnd, DimH, OOWet, OODry, OOExp, OOChem, 
+                        SPCLength,AOLMF, AOLLF,AOLHF,AolLfDegreees,AolHfdegrees );
             return iFormz;
         }
 
@@ -738,7 +740,7 @@ namespace WpfApplication1
             txtboxAollf.Text = form.AOLLF.ToString();
             txtboxAolmf.Text = form.AOLMF.ToString();
             txtboxAolhfDegrees.Text = form.AOLHFDegrees.ToString();
-            TxtboxAollfDegrees.Text = form.AOLLF.ToString();
+            TxtboxAollfDegrees.Text = form.AOLLFDegrees.ToString();
         }
 
         private void loadIContactPersontoUI(IContactPerson icontactperson)
