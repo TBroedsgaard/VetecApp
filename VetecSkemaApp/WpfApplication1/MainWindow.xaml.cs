@@ -1111,7 +1111,7 @@ namespace WpfApplication1
 
         private void TxtboxAollfDegrees_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txtboxAolhf.Text != "")
+            if (TxtboxAollfDegrees.Text != "")
             {
                 try
                 {
