@@ -67,7 +67,7 @@ namespace WpfApplication1
             
             int DimA = int.Parse(txtboxA.Text);
             int DimB = int.Parse(txtboxB.Text);
-            int DimC = int.Parse(txtboxA.Text);
+            int DimC = int.Parse(txtboxC.Text);
             int DimD = int.Parse(txtboxD.Text);
             int DimE = int.Parse(txtboxE.Text);
             int DimF = int.Parse(txtboxF.Text);
@@ -286,6 +286,7 @@ namespace WpfApplication1
                 chckbox700.IsEnabled = false;
                 chckbox1000.IsEnabled = false;
                 chckbox2000.IsEnabled = false;
+                ChckboxStandard.IsEnabled = false;
             }
 
 
@@ -295,6 +296,7 @@ namespace WpfApplication1
                 chckbox350.IsEnabled = false;
                 chckbox1000.IsEnabled = false;
                 chckbox2000.IsEnabled = false;
+                ChckboxStandard.IsEnabled = false;
             }
             //1000 ohm checkbox - checked = disable other ohms
             if (chckbox1000.IsChecked == true)
@@ -302,6 +304,7 @@ namespace WpfApplication1
                 chckbox700.IsEnabled = false;
                 chckbox350.IsEnabled = false;
                 chckbox2000.IsEnabled = false;
+                ChckboxStandard.IsEnabled = false;
             }
 
             //2000 ohm checkbox - checked = disable other ohms
@@ -310,6 +313,16 @@ namespace WpfApplication1
                 chckbox700.IsEnabled = false;
                 chckbox1000.IsEnabled = false;
                 chckbox350.IsEnabled = false;
+                ChckboxStandard.IsEnabled = false;
+            }
+
+            // standard
+            if (ChckboxStandard.IsChecked == true)
+            {
+                chckbox350.IsEnabled = false;
+                chckbox700.IsEnabled = false;
+                chckbox1000.IsEnabled = false;
+                chckbox2000.IsEnabled = false;
             }
         }
         private void bridgeResistanceCheckboxUnchecked(object sender, RoutedEventArgs e)
@@ -320,6 +333,7 @@ namespace WpfApplication1
                 chckbox700.IsEnabled = true;
                 chckbox1000.IsEnabled = true;
                 chckbox2000.IsEnabled = true;
+                ChckboxStandard.IsEnabled = true;
             }
             //700
             if (chckbox700.IsChecked == false)
@@ -327,6 +341,7 @@ namespace WpfApplication1
                 chckbox350.IsEnabled = true;
                 chckbox1000.IsEnabled = true;
                 chckbox2000.IsEnabled = true;
+                ChckboxStandard.IsEnabled = true;
             }
             //1000
             if (chckbox1000.IsChecked == false)
@@ -334,6 +349,7 @@ namespace WpfApplication1
                 chckbox700.IsEnabled = true;
                 chckbox350.IsEnabled = true;
                 chckbox2000.IsEnabled = true;
+                ChckboxStandard.IsEnabled = true;
             }
             //2000
             if (chckbox2000.IsChecked == false)
@@ -341,6 +357,16 @@ namespace WpfApplication1
                 chckbox700.IsEnabled = true;
                 chckbox1000.IsEnabled = true;
                 chckbox350.IsEnabled = true;
+                ChckboxStandard.IsEnabled = true;
+            }
+
+            //Standard
+            if (ChckboxStandard.IsChecked == false)
+            {
+                chckbox350.IsEnabled = true;
+                chckbox700.IsEnabled = true;
+                chckbox1000.IsEnabled = true;
+                chckbox2000.IsEnabled = true;
             }
         }
 
@@ -749,6 +775,7 @@ namespace WpfApplication1
  
         }
 
+        /*
         private void standardCheckboxChecked(object sender, RoutedEventArgs e)
         {
             chckbox1000.IsChecked = false;
@@ -773,6 +800,7 @@ namespace WpfApplication1
             chckbox700.IsEnabled = true;
             chckbox350.IsEnabled = true;
         }
+        */
 
         private void txtboxLoadCap_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -1083,7 +1111,7 @@ namespace WpfApplication1
 
         private void TxtboxAollfDegrees_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txtboxAolhf.Text != "")
+            if (TxtboxAollfDegrees.Text != "")
             {
                 try
                 {
