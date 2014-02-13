@@ -67,7 +67,7 @@ namespace WpfApplication1
             
             int DimA = int.Parse(txtboxA.Text);
             int DimB = int.Parse(txtboxB.Text);
-            int DimC = int.Parse(txtboxA.Text);
+            int DimC = int.Parse(txtboxC.Text);
             int DimD = int.Parse(txtboxD.Text);
             int DimE = int.Parse(txtboxE.Text);
             int DimF = int.Parse(txtboxF.Text);
@@ -342,6 +342,12 @@ namespace WpfApplication1
                 chckbox1000.IsEnabled = true;
                 chckbox350.IsEnabled = true;
             }
+
+            // Standard
+            //if (ChckboxStandard.IsChecked == false)
+            //{ 
+
+            //}
         }
 
 
